@@ -78,6 +78,9 @@ public class HelloWorld extends PApplet
 		// This line makes the map interactive
 		MapUtils.createDefaultEventDispatcher(this, map1);
 		
+		MapUtils.createDefaultEventDispatcher(this, map2);
+		
+		
 		// TODO: Add code here that creates map2 
 		// Then you'll modify draw() below
 
