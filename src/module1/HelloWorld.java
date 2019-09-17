@@ -70,6 +70,10 @@ public class HelloWorld extends PApplet
 		// The next line zooms in and centers the map at 
 	    // 32.9 (latitude) and -117.2 (longitude)
 	    map1.zoomAndPanTo(zoomLevel, new Location(32.9f, -117.2f));
+	    
+	    map2 = new UnfoldingMap(this, 50, 50, 350, 500, provider);
+	   
+	    map2.zoomAndPanTo(zoomLevel,  new Location(41.3f, -92.6f));
 		
 		// This line makes the map interactive
 		MapUtils.createDefaultEventDispatcher(this, map1);
