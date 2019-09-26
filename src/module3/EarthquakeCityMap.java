@@ -34,7 +34,7 @@ public class EarthquakeCityMap extends PApplet {
 	private static final long serialVersionUID = 1L;
 
 	// IF YOU ARE WORKING OFFLINE, change the value of this variable to true
-	private static final boolean offline = true;
+	private static final boolean offline = false;
 	
 	// Less than this threshold is a light earthquake
 	public static final float THRESHOLD_MODERATE = 5;
@@ -80,12 +80,12 @@ public class EarthquakeCityMap extends PApplet {
 	    // List markers (so that it will be added to the map in the line below)
 	    
 	    
+		//createMarker((PointFeature) earthquakes);
 	    for(int xx = 0; xx < (earthquakes).size(); xx++) {
-	    	SimplePointMarker val = new SimplePointMarker();
-	    	createMarker((PointFeature) markers);
-	    	
+	    Location valLoc = new Location(-38.14f, -73.03f);
+	    Marker val = new SimplePointMarker(valLoc);
+	    map.addMarker(val);
 	    }
-	    
 	    
 	    // Add the markers to the map so that they are displayed
 	    map.addMarkers(markers);
@@ -105,7 +105,9 @@ public class EarthquakeCityMap extends PApplet {
 		// To print all of the features in a PointFeature (so you can see what they are)
 		// uncomment the line below.  Note this will only print if you call createMarker 
 		// from setup
-		//System.out.println(feature.getProperties());
+		System.out.println(feature.getProperties());
+		
+		
 		
 		// Create a new SimplePointMarker at the location given by the PointFeature
 		SimplePointMarker marker = new SimplePointMarker(feature.getLocation());
@@ -116,6 +118,10 @@ public class EarthquakeCityMap extends PApplet {
 		// Here is an example of how to use Processing's color method to generate 
 	    // an int that represents the color yellow.  
 	    int yellow = color(255, 255, 0);
+	    int purple = color(156, 51, 255);
+	    int pink = color(255, 51, 227);
+	    int teal = color(51, 255, 168);
+	    
 		
 		// TODO (Step 4): Add code below to style the marker's size and color 
 	    // according to the magnitude of the earthquake.  
