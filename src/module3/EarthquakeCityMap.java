@@ -37,9 +37,9 @@ public class EarthquakeCityMap extends PApplet {
 	private static final boolean offline = false;
 	
 	// Less than this threshold is a light earthquake
-	public static final float THRESHOLD_MODERATE = 5;
+	public static final float THRESHOLD_MODERATE = 6;
 	// Less than this threshold is a minor earthquake
-	public static final float THRESHOLD_LIGHT = 4;
+	public static final float THRESHOLD_LIGHT = 3;
 
 	/** This is where to find the local tiles, for working without an Internet connection */
 	public static String mbTilesString = "blankLight-1-3.mbtiles";
@@ -116,13 +116,15 @@ public class EarthquakeCityMap extends PApplet {
 		
 		Object magObj = feature.getProperty("magnitude");
 		float mag = Float.parseFloat(magObj.toString());
-		
 		// Here is an example of how to use Processing's color method to generate 
 	    // an int that represents the color yellow.  
 	    int yellow = color(255, 255, 0);
 	    int purple = color(156, 51, 255);
 	    int pink = color(255, 51, 227);
 	    int teal = color(51, 255, 168);
+	    float radius1 = 5;
+	    float radius2 = 10;
+	    float radius3 = 15;
 	    
 		
 		// TODO (Step 4): Add code below to style the marker's size and color 
@@ -132,7 +134,20 @@ public class EarthquakeCityMap extends PApplet {
 	    // Rather than comparing the magnitude to a number directly, compare 
 	    // the magnitude to these variables (and change their value in the code 
 	    // above if you want to change what you mean by "moderate" and "light")
-	    
+	    if (mag < THRESHOLD_LIGHT) {
+	    	marker.setColor(purple);
+	    	marker.setRadius(radius1);
+	    }
+	    else if (mag >= THRESHOLD_LIGHT && mag <= THRESHOLD_MODERATE) {
+	    	marker.setColor(teal);
+	    	marker.setRadius(radius2);
+	    }
+	    else if (mag > THRESHOLD_MODERATE) {
+	    	marker.setColor(pink);
+	    	marker.setRadius(radius3);
+	    	
+	   }
+	   
 	    
 	    // Finally return the marker
 	    return marker;
