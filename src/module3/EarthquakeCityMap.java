@@ -81,8 +81,7 @@ public class EarthquakeCityMap extends PApplet {
 	    
 	    for(int counter = 0; counter < earthquakes.size(); counter++) {
 	    	PointFeature pf = earthquakes.get(counter);
-	    	createMarker(pf);
-	    	markers.add((Marker) pf);
+	    	markers.add(createMarker(pf));
 	    }
 	    
 	    // Add the markers to the map so that they are displayed
