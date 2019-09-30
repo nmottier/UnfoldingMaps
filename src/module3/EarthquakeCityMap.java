@@ -34,10 +34,10 @@ public class EarthquakeCityMap extends PApplet {
 	private static final long serialVersionUID = 1L;
 
 	// IF YOU ARE WORKING OFFLINE, change the value of this variable to true
-	private static final boolean offline = false;
+	private static final boolean offline = true;
 	
 	// Less than this threshold is a light earthquake
-	public static final float THRESHOLD_MODERATE = 6;
+	public static final float THRESHOLD_MODERATE = 5;
 	// Less than this threshold is a minor earthquake
 	public static final float THRESHOLD_LIGHT = 3;
 
@@ -151,7 +151,10 @@ public class EarthquakeCityMap extends PApplet {
 	    
 	    // Finally return the marker
 	    return marker;
+	    
+	    
 	}
+	
 	
 	public void draw() {
 	    background(10);
@@ -165,6 +168,9 @@ public class EarthquakeCityMap extends PApplet {
 	private void addKey() 
 	{	
 		// Remember you can use Processing's graphics methods here
+		fill(255, 204, 204);
+		rect(25, 50, 150, 300);
+	
 	
 	}
 }
