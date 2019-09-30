@@ -171,6 +171,10 @@ public class EarthquakeCityMap extends PApplet {
 		fill(255, 204, 204);
 		rect(25, 50, 150, 300);
 	
+		textSize(16);
+		fill(0, 0, 0);
+		text("Earthquake Key", 40, 80);
+	
 	
 	}
 }
