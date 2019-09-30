@@ -173,7 +173,23 @@ public class EarthquakeCityMap extends PApplet {
 	
 		textSize(16);
 		fill(0, 0, 0);
-		text("Earthquake Key", 40, 80);
+		text("Earthquake", 55, 80);
+		
+		textSize(16);
+		fill(0, 0, 0);
+		text("Magnitude Key", 45, 100);
+		
+		textSize(10);
+		fill(0, 0, 0);
+		text("Below 3.0", 65, 140);
+		
+		textSize(10);
+		fill(0, 0, 0);
+		text("Between 3.0 and 5.0", 65, 180);
+		
+		textSize(10);
+		fill(0, 0, 0);
+		text("Above 5.0", 65, 220);
 	
 	
 	}
