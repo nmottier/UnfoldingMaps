@@ -122,6 +122,7 @@ public class EarthquakeCityMap extends PApplet {
 	    int purple = color(156, 51, 255);
 	    int pink = color(255, 51, 227);
 	    int teal = color(51, 255, 168);
+	    int grey = color(128, 128, 128);
 	    float radius1 = 5;
 	    float radius2 = 10;
 	    float radius3 = 15;
@@ -139,7 +140,7 @@ public class EarthquakeCityMap extends PApplet {
 	    	marker.setRadius(radius1);
 	    }
 	    else if (mag >= THRESHOLD_LIGHT && mag <= THRESHOLD_MODERATE) {
-	    	marker.setColor(teal);
+	    	marker.setColor(grey);
 	    	marker.setRadius(radius2);
 	    }
 	    else if (mag > THRESHOLD_MODERATE) {
@@ -179,22 +180,22 @@ public class EarthquakeCityMap extends PApplet {
 		fill(0, 0, 0);
 		text("Magnitude Key", 45, 100);
 		
-		textSize(12);
+		textSize(10);
 		fill(0, 0, 0);
 		text("Below 3.0", 65, 140);
 		
-		textSize(12);
+		textSize(10);
 		fill(0, 0, 0);
 		text("Between 3.0 and 5.0", 65, 180);
 		
-		textSize(12);
+		textSize(10);
 		fill(0, 0, 0);
 		text("Above 5.0", 65, 220);
 		
 		fill(156, 51, 255);
 		ellipse(45, 135, 5, 5);
 		
-		fill(51, 255, 168);
+		fill(128, 128, 128);
 		ellipse(45, 175, 10, 10);
 	
 		fill(255, 51, 227);
