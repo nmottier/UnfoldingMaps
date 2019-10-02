@@ -79,10 +79,18 @@ public class EarthquakeCityMap extends PApplet {
 	    // earthquakes.  Then add each new SimplePointMarker to the 
 	    // List markers (so that it will be added to the map in the line below)
 	    
+	    Object mag2;
+	    float mag3;
 	    for(int counter = 0; counter < earthquakes.size(); counter++) {
 	    	PointFeature pf = earthquakes.get(counter);
+	    	mag2 = pf.getProperty("magnitude");
+	    	mag3 = Float.parseFloat(mag2.toString());
+	    	if(mag3 > THRESHOLD_LIGHT) {
 	    	markers.add(createMarker(pf));
-	    }
+	    	}
+	    	else {
+	    	}
+	    	}
 	    
 	    // Add the markers to the map so that they are displayed
 	    map.addMarkers(markers);
@@ -102,7 +110,7 @@ public class EarthquakeCityMap extends PApplet {
 	 * TODO (Step 4): Add code to this method so that it adds the proper 
 	 * styling to each marker based on the magnitude of the earthquake.  
 	*/
-	private SimplePointMarker createMarker(PointFeature feature)
+	public SimplePointMarker createMarker(PointFeature feature)
 	{  
 		// To print all of the features in a PointFeature (so you can see what they are)
 		// uncomment the line below.  Note this will only print if you call createMarker 
