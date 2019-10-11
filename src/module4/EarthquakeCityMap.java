@@ -111,7 +111,7 @@ public class EarthquakeCityMap extends PApplet {
 	    }
 
 	    // could be used for debugging
-	    printQuakes();
+	    printQuakes(null);
 	 		
 	    // (3) Add markers to map
 	    //     NOTE: Country markers are not added to the map.  They are used
@@ -176,12 +176,11 @@ public class EarthquakeCityMap extends PApplet {
 				return true;
 			}
 			// TODO: Finish this method using the helper method isInCountry
-			
-		}
-		
+		}		
+		return false;
+	
 		
 		// not inside any country
-		return false;
 	}
 	
 	/* prints countries with number of earthquakes as
@@ -190,12 +189,20 @@ public class EarthquakeCityMap extends PApplet {
 	 * ...
 	 * OCEAN QUAKES: numOceanQuakes
 	 * */
-	private void printQuakes() 
+	private void printQuakes(EarthquakeMarker m) 
 	{
 		// TODO: Implement this method
 		// One (inefficient but correct) approach is to:
 		//   Loop over all of the countries, e.g. using 
-		//        for (Marker cm : countryMarkers) { ... }
+		int quake = 0;    
+		for (Marker cm : countryMarkers) { 
+			EarthquakeMarker em = (EarthquakeMarker)m;
+			String name = (String)cm.getProperty("name");
+
+		    		System.out.println(name);
+				
+		    	}
+		}
 		//        
 		//      Inside the loop, first initialize a quake counter.
 		//      Then loop through all of the earthquake
@@ -210,7 +217,7 @@ public class EarthquakeCityMap extends PApplet {
 		//     String name = (String)cm.getProperty("name");
 		//  * If you have a reference to a Marker m, but you know the underlying object
 		//    is an EarthquakeMarker, you can cast it:
-		//       EarthquakeMarker em = (EarthquakeMarker)m;
+		//     EarthquakeMarker em = (EarthquakeMarker)m;
 		//    Then em can access the methods of the EarthquakeMarker class 
 		//       (e.g. isOnLand)
 		//  * If you know your Marker, m, is a LandQuakeMarker, then it has a "country" 
@@ -218,7 +225,7 @@ public class EarthquakeCityMap extends PApplet {
 		//        String country = (String)m.getProperty("country");
 		
 		
-	}
+	
 	
 	
 	
