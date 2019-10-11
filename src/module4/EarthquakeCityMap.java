@@ -168,7 +168,13 @@ public class EarthquakeCityMap extends PApplet {
 		// country in m.  Notice that isInCountry takes a PointFeature
 		// and a Marker as input.  
 		// If isInCountry ever returns true, isLand should return true.
+		
+		
 		for (Marker m : countryMarkers) {
+			Boolean n = isInCountry(earthquake,m);
+			if (n == true) {
+				return true;
+			}
 			// TODO: Finish this method using the helper method isInCountry
 			
 		}
