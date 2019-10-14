@@ -35,7 +35,7 @@ public class EarthquakeCityMap extends PApplet {
 	private static final long serialVersionUID = 1L;
 
 	// IF YOU ARE WORKING OFFILINE, change the value of this variable to true
-	private static final boolean offline = false;
+	private static final boolean offline = true;
 	
 	/** This is where to find the local tiles, for working without an Internet connection */
 	public static String mbTilesString = "blankLight-1-3.mbtiles";
@@ -76,7 +76,7 @@ public class EarthquakeCityMap extends PApplet {
 		
 		// FOR TESTING: Set earthquakesURL to be one of the testing files by uncommenting
 		// one of the lines below.  This will work whether you are online or offline
-		//earthquakesURL = "test1.atom";
+		earthquakesURL = "test1.atom";
 		//earthquakesURL = "test2.atom";
 		
 		// WHEN TAKING THIS QUIZ: Uncomment the next line
@@ -111,7 +111,7 @@ public class EarthquakeCityMap extends PApplet {
 	    }
 
 	    // could be used for debugging
-	    printQuakes(null);
+	    printQuakes();
 	 		
 	    // (3) Add markers to map
 	    //     NOTE: Country markers are not added to the map.  They are used
@@ -175,11 +175,14 @@ public class EarthquakeCityMap extends PApplet {
 			if (n == true) {
 				return true;
 			}
+			
+				
+			
+				
 			// TODO: Finish this method using the helper method isInCountry
-		}		
-		return false;
+		}	
 	
-		
+		return false;
 		// not inside any country
 	}
 	
@@ -189,20 +192,38 @@ public class EarthquakeCityMap extends PApplet {
 	 * ...
 	 * OCEAN QUAKES: numOceanQuakes
 	 * */
-	private void printQuakes(EarthquakeMarker m) 
+	private void printQuakes() 
 	{
 		// TODO: Implement this method
 		// One (inefficient but correct) approach is to:
 		//   Loop over all of the countries, e.g. using 
-		int quake = 0;    
+		
 		for (Marker cm : countryMarkers) { 
-			EarthquakeMarker em = (EarthquakeMarker)m;
+			int quakeLand = 0;
 			String name = (String)cm.getProperty("name");
-
-		    		System.out.println(name);
-				
-		    	}
+			for (Marker n : quakeMarkers) {
+				EarthquakeMarker em = (EarthquakeMarker)n;
+				String country = (String)em.getProperty("country");
+				if(name == country) {
+					quakeLand++;
+				}
+			}
+			if (quakeLand != 0 ) {
+				System.out.println(name + ": " + quakeLand);
+			}
 		}
+		int quakeOcean = 0;
+		for (Marker m : countryMarkers) {
+			String country = (String)m.getProperty("country");
+		    if (country == null) {
+		    	quakeOcean++;
+		    }	
+		}
+		System.out.println("Ocean: " + quakeOcean);
+	}
+		    	
+		 
+		
 		//        
 		//      Inside the loop, first initialize a quake counter.
 		//      Then loop through all of the earthquake
