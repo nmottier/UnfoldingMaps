@@ -33,7 +33,16 @@ public class LandQuakeMarker extends EarthquakeMarker {
 		// and how it is set in the EarthquakeMarker constructor
 		
 		// TODO: Implement this method
-		
+		Float mag = getMagnitude();
+		if (mag < THRESHOLD_LIGHT) {
+			pg.ellipse(x, y, 5, 5);	
+		}
+		if (mag >= THRESHOLD_LIGHT || mag <= THRESHOLD_MODERATE) {
+			pg.ellipse(x, y, 10, 10);
+		}
+		if (mag > THRESHOLD_MODERATE) {
+			pg.ellipse(x, y, 15, 15);
+		}
 	}
 	
 
