@@ -156,6 +156,9 @@ public class EarthquakeCityMap extends PApplet {
 		fill(255, 255, 255);
 		rect(50, 170, 10, 10);
 		
+		fill(0, 0, 0);
+		text("Size - Magnitude", 50, 200);
+		
 	}
 
 	
