@@ -146,6 +146,16 @@ public class EarthquakeCityMap extends PApplet {
 		
 		fill(0, 0, 0);
 		text("City Marker", 75, 125);
+		
+		text("Land Quake", 75, 150);
+		fill(255, 255, 255);
+		ellipse(55, 150, 10, 10);
+		
+		fill(0, 0, 0);
+		text("Ocean Quake", 75, 175);
+		fill(255, 255, 255);
+		rect(50, 170, 10, 10);
+		
 	}
 
 	

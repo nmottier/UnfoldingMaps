@@ -41,7 +41,7 @@ public class LandQuakeMarker extends EarthquakeMarker {
 			pg.ellipse(x, y, 10, 10);
 		}
 		if (mag > THRESHOLD_MODERATE) {
-			pg.ellipse(x, y, 15, 15);
+			pg.ellipse(x, y, 15, 15); 
 		}
 	}
 	
