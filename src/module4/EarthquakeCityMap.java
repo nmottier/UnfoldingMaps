@@ -159,6 +159,22 @@ public class EarthquakeCityMap extends PApplet {
 		fill(0, 0, 0);
 		text("Size - Magnitude", 50, 200);
 		
+		fill(60, 179, 113);
+		ellipse(55, 225, 10, 10);
+		
+		fill(255, 0, 0);
+		ellipse(55, 250, 10, 10);
+		
+		fill(0, 255, 0);
+		ellipse(55, 275, 10, 10);
+		
+		fill(0, 0, 0);
+		text("Shallow", 75, 225);
+		
+		text("Intermediate", 75, 250);
+		
+		text("Deep", 75, 275);
+		
 	}
 
 	
