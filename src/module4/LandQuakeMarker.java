@@ -43,6 +43,11 @@ public class LandQuakeMarker extends EarthquakeMarker {
 		if (mag > THRESHOLD_MODERATE) {
 			pg.ellipse(x, y, 15, 15); 
 		}
+		if(getProperty("age").equals("Past Day")) {
+			pg.line(x-10, y-10, x+10, y+10);
+			pg.line(x+10, y-10, x-10, y+10);
+			
+		}
 	}
 	
 
