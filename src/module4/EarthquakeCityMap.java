@@ -141,6 +141,13 @@ public class EarthquakeCityMap extends PApplet {
 		textSize(12);
 		text("Earthquake Key", 50, 75);
 		
+		text("Past Day", 75, 100);
+		fill(255, 255, 255);
+		ellipse(55, 100, 10, 10);
+		fill(0, 0, 0);
+		line(45, 90, 65, 110);
+		line(65, 90, 45, 110); 
+		
 		fill(color(128, 0, 128));
 		triangle(50, 130, 60, 130, 55, 120);
 		

@@ -32,13 +32,13 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 		// TODO: Implement this method
 		Float mag = getMagnitude();
 		if (mag < THRESHOLD_LIGHT) {
-			pg.rect(x, y, 5, 5);	
+			pg.rect(x-5, y-5, 5, 5);	
 		}
 		if (mag >= THRESHOLD_LIGHT || mag <= THRESHOLD_MODERATE) {
-			pg.rect(x, y, 10, 10);
+			pg.rect(x-5, y-5, 10, 10);
 		}
 		if (mag > THRESHOLD_MODERATE) {
-			pg.rect(x, y, 15, 15); 
+			pg.rect(x-5, y-5, 15, 15); 
 		}
 	}
 	
